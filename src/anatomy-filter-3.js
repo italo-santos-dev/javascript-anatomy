@@ -15,7 +15,7 @@ let asp = [
 let campoAsp = []
 
 for (var i = 0; i < asp.length; i++) {
-    if (asp[i]._id != null) {
+    if (asp[i]._id === 'eyJhbGciOiJIUzI1NiJ9') {
         campoAsp.push(asp[i])
     }
 }
