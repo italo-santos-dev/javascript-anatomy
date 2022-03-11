@@ -23,3 +23,9 @@ let listClt = area.filter((el) => {
 }).length;
 
 console.log(listClt)
+
+let listPj = area.filter((el) => {
+    return el.employee === 'PJ'
+}).length;
+
+console.log(listPj)
