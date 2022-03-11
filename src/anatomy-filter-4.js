@@ -21,7 +21,7 @@ campoSelecaoAsps.forEach(item => {
 
 var aspCampoNuNull = asp.filter(function isNaN(asP) {
     return asP._id
-})
+});
 
 console.log(aspCampoNuNull)
 
@@ -29,8 +29,6 @@ console.log(campoSelecaoAsps)
 
 let itens = asp.filter(a => a !== null).filter((este, i) => asp.filter(a => a !== null).map(a => a._id).indexOf(este._id) === i);
 
-itens.forEach(item => {
-    return item
-})
+itens.forEach(item => item);
 
 console.log(itens)
