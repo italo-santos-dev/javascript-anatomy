@@ -9,6 +9,7 @@ let asp = [
     {_id: 5},
     {},
     {_id: 6},
+    {_id: 6},
     'foo', 'bar', 'foo', 
 ]
 

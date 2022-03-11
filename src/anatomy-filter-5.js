@@ -1,6 +1,8 @@
 let obras = [
     {_id: 'eyJhbGciOiJIUzI1NiJ9', name: "SAP", employee: "PJ"},
+    {_id: 'eyJhbGciOiJIUzI1NiJ9', name: "SAP", employee: "PJ"},
     {_id: NaN},
+    {_id: ''},
     {_id: 'eyJhbGciOiJIUzI1NiJ8', name: "E2E", employee: "PJ"},
     {_id: null },
     {_id: 'eyJhbGciOiJIUzI1NiJ7', name: "NEXT", employee: "CLT"},
@@ -16,7 +18,7 @@ let itens = obras.filter((el) => {
     return el.name === 'E2E'
 });
 
-console.log(itens)
+// console.log(itens)
 
 let listClt = obras.filter((el) => {
     return el.employee === 'CLT'
@@ -24,8 +26,15 @@ let listClt = obras.filter((el) => {
 
 console.log(listClt)
 
-let listPj = obras.filter((el) => {
-    return el.employee === 'PJ'
+let list = obras.filter((este, i) => obras.filter(a => a !== null).map(a => a._id).indexOf(este._id) === i).filter(function isNaN(este) {
+    return este._id != null && este.employee === 'PJ'
 }).length;
 
-console.log(listPj)
+console.log(list)
+/*
+var campoSelecaoAsps = asp.filter((este, i) => asp.indexOf(este) === i).filter(function isNaN(item) {
+    return item._id
+});
+*/
+
+//console.log(listPj)
