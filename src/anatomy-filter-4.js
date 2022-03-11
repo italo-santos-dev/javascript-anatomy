@@ -13,19 +13,17 @@ let asp = [
 ]
 
 
-var campoSelecaoAsps = asp.filter((este, i) => asp.indexOf(este) === i)
-
-campoSelecaoAsps.forEach(item => { 
+var campoSelecaoAsps = asp.filter((este, i) => asp.indexOf(este) === i).filter(function isNaN(item) {
     return item._id
-})
+});
+
+console.log(campoSelecaoAsps)
 
 var aspCampoNuNull = asp.filter(function isNaN(asP) {
     return asP._id
 });
 
 console.log(aspCampoNuNull)
-
-console.log(campoSelecaoAsps)
 
 let itens = asp.filter(a => a !== null).filter((este, i) => asp.filter(a => a !== null).map(a => a._id).indexOf(este._id) === i);
 

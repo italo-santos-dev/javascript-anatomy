@@ -1,4 +1,4 @@
-let area = [
+let obras = [
     {_id: 'eyJhbGciOiJIUzI1NiJ9', name: "SAP", employee: "PJ"},
     {_id: NaN},
     {_id: 'eyJhbGciOiJIUzI1NiJ8', name: "E2E", employee: "PJ"},
@@ -12,19 +12,19 @@ let area = [
     {_id: 2},
 ]
 
-let itens = area.filter((el) => {
+let itens = obras.filter((el) => {
     return el.name === 'E2E'
 });
 
 console.log(itens)
 
-let listClt = area.filter((el) => {
+let listClt = obras.filter((el) => {
     return el.employee === 'CLT'
 }).length;
 
 console.log(listClt)
 
-let listPj = area.filter((el) => {
+let listPj = obras.filter((el) => {
     return el.employee === 'PJ'
 }).length;
 
