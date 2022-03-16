@@ -26,9 +26,7 @@ let listClt = obras.filter((el) => {
 
 console.log(listClt)
 
-let list = obras.filter((este, i) => obras.filter(a => a !== null).map(a => a._id).indexOf(este._id) === i).filter(function isNaN(este) {
-    return este._id != null && este.employee === 'PJ'
-}).length;
+let list = obras.filter((este, i) => obras.filter(a => a !== null).map(a => a._id).indexOf(este._id) === i)
 
 console.log(list)
 /*
