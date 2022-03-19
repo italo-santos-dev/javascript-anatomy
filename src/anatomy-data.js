@@ -1,14 +1,14 @@
 const reverseDateRepresentation = date => {
     let parts = date.split('/');
     return `${parts[2]}/${parts[1]}/${parts[0]}`;
-  };
+};
 
-  const sortedDates = ['3/20/22', '02/01/2018', '01/01/2018']
+const sortedDates = ['3/20/22', '02/01/2018', '01/01/2018']
     .map(reverseDateRepresentation)
     .sort()
     .map(reverseDateRepresentation);
 
-  console.log(sortedDates);
+console.log(sortedDates);
 
 
 function converteDate(str) {
@@ -34,12 +34,12 @@ function converteDate(str) {
     var dateStringTest = (dates[1] <= 9 ? '0' + dates[1] : dates[1]) + '/' + (dates[0] <= 9 ? '0' + dates[0] : dates[0]) + '/' + y;
 
     return dateStringTest
-//    return dateString
+    //    return dateString
     // return new Date(Date.UTC(dates[2], parseInt(dates[1]) - 1, dates[0]));
 }
 
 let data = new Date("Jan 29 2020");
-let dataFormatada = (data.getFullYear() + "-" + ((data.getMonth() + 1)) + "-" + (data.getDate() )) ;
+let dataFormatada = (data.getFullYear() + "-" + ((data.getMonth() + 1)) + "-" + (data.getDate()));
 console.log(dataFormatada);
 
 console.log(converteDate(str = "4/1/20"))
@@ -53,10 +53,10 @@ console.log(converteDate(str = '2020/2/29'))
 
 let stringsFromAPI = ["4/1/22"];
 
-stringsFromAPI.forEach( (d) => {
+stringsFromAPI.forEach((d) => {
     if (!isNaN(Date.parse(d))) {
         console.log(new Date(d));
-    }    
+    }
 })
 
 
@@ -68,3 +68,18 @@ function convertFromStringToDate(responseDate) {
 }
 
 console.log(convertFromStringToDate("21/03/2020"))
+
+let dataTest = "10/11/1922"
+
+let dataSemTime = dataTest.split("/");
+let dataValidacaoDoRegistro = new Date(20 + dataSemTime[2].substr(-2), dataSemTime[1] - 1, dataSemTime[0]);
+
+// .toLocaleDateString();
+
+console.log("########## " + dataValidacaoDoRegistro)
+
+let d = "12/12/2020 00:00:00 AM";
+
+let dsT = d.split(" ")[0];
+
+console.log(dsT);
