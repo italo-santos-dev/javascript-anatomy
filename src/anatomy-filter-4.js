@@ -1,5 +1,8 @@
 let asp = [
     {_id: 'eyJhbGciOiJIUzI1NiJ9'},
+    {_id: 'eyJhbGciOiJIUzI1NiJ9'},
+    {_id: 'eyJhbGciOiJIUzI1NiJ9'},
+    {_id: 'eyJhbGciOiJIUzI1NiJ9'},
     {_id: NaN},
     {_id: 'eyJhbGciOiJIUzI1NiJ8'},
     {_id: null },
@@ -10,6 +13,7 @@ let asp = [
     {},
     {_id: 6},
     {_id: 6},
+
     'foo', 'bar', 'foo', 
 ]
 
@@ -20,14 +24,14 @@ var campoSelecaoAsps = asp.filter((este, i) => asp.indexOf(este) === i).filter(f
 
 console.log(campoSelecaoAsps)
 
-var aspCampoNuNull = asp.filter(function isNaN(asP) {
-    return asP._id
-});
+// var aspCampoNuNull = asp.filter(function isNaN(asP) {
+//     return asP._id
+// });
 
-console.log(aspCampoNuNull)
+// console.log(aspCampoNuNull)
 
 let itens = asp.filter(a => a !== null).filter((este, i) => asp.filter(a => a !== null).map(a => a._id).indexOf(este._id) === i);
 
-itens.forEach(item => item);
+// itens.forEach(item => item);
 
 console.log(itens)
