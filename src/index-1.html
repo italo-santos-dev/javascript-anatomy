@@ -1,0 +1,33 @@
+<input type="file" onchange="parseExcelFile1(this)">
+
+<script>
+
+  function parseExcelFile1(inputElement) {
+    var files = inputElement.files || [];
+    if (!files.length) return;
+    var file = files[0];
+
+    console.time();
+
+    var reader = new FileReader();
+    reader.onloadend = function (event) {
+      var arrayBuffer = reader.result;
+      // debugger
+
+      var options = { type: 'array' };
+      var workbook = XLSX.read(arrayBuffer, options);
+
+      console.timeEnd();
+
+      var sheetName = workbook.SheetNames
+      var sheet = workbook.Sheets[sheetName]
+      let rows = XLSX.utils.sheet_to_json(sheet)
+
+      console.log(rows)
+    };
+    reader.readAsArrayBuffer(file);
+  }
+
+</script>
+
+<script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
