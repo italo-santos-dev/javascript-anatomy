@@ -15,16 +15,16 @@ let obras = [
 ]
 
 let itens = obras.filter((el) => {
-    return el.name === 'E2E'
+    return el.name === "E2E"
 });
 
-// console.log(itens)
+console.log(itens)
 
-let listClt = obras.filter((el) => {
-    return el.employee === 'CLT'
-}).length;
+// let listClt = obras.filter((el) => {
+//     return el.employee === 'CLT'
+// }).length;
 
-console.log(listClt)
+// console.log(listClt)
 
 let list = obras.filter((este, i) => obras.filter(a => a !== null).map(a => a._id).indexOf(este._id) === i)
 
