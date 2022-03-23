@@ -19,11 +19,22 @@
 
       console.timeEnd();
 
-      var sheetName = workbook.SheetNames
+      var sheetName = workbook.SheetNames[0]
       var sheet = workbook.Sheets[sheetName]
+      
       let rows = XLSX.utils.sheet_to_json(sheet)
 
+
       console.log(rows)
+
+      let itens = rows.filter(a => a !== null).filter((este, i) => rows.filter(a => a !== null).map(a => a._id).indexOf(este._id) === i);
+
+      // let dados = itens.filter((el) => {
+      //   return el. === "E2E"
+      // });
+
+      console.log(itens)
+
     };
     reader.readAsArrayBuffer(file);
   }
