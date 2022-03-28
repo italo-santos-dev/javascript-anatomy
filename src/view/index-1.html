@@ -12,18 +12,24 @@
     var reader = new FileReader();
     reader.onloadend = function (event) {
       var arrayBuffer = reader.result;
-      // debugger
+      // debugger      
 
-      var options = { type: 'array' };
+      // var options = { type: 'array' };
+      var options = { type: "base64", cellText: false, cellDates: true }
       var workbook = XLSX.read(arrayBuffer, options);
 
       console.timeEnd();
 
       var sheetName = workbook.SheetNames[0]
       var sheet = workbook.Sheets[sheetName]
-      
+
       let rows = XLSX.utils.sheet_to_json(sheet)
 
+      if (!rows.length) {
+        throw 'Não foi possível ler os dados do arquivo.';
+      }
+
+      
 
       console.log(rows)
 
@@ -36,6 +42,7 @@
       console.log(itens)
 
     };
+
     reader.readAsArrayBuffer(file);
   }
 
