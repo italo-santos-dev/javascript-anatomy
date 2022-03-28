@@ -1,15 +1,15 @@
-// function converteDate(str) {
-//     if (str == null || str.trim().length === 0) {
-//         return null;
-//     }
-//     let dates = (str).split('/');
-//     //return new Date(Date.UTC(20 + dates[2].substr(-2), parseInt(dates[0]) - 1, dates[1], 3, 0, 0));
+function converteDate(str) {
+    if (str == null || str.trim().length === 0) {
+        return null;
+    }
+    let dates = (str).split('/');
+    //return new Date(Date.UTC(20 + dates[2].substr(-2), parseInt(dates[0]) - 1, dates[1], 3, 0, 0));
 
-//     //return new Date(Date.UTC(dates[2], parseInt(dates[1]) - 1, dates[0], 3, 0, 0));
-//     return new Date(Date.UTC(20 + dates[2].substr(-2), parseInt(dates[1]) - 1, dates[0], 3, 0, 0));
-// }
+    //return new Date(Date.UTC(dates[2], parseInt(dates[1]) - 1, dates[0], 3, 0, 0));
+    return new Date(Date.UTC(20 + dates[2].substr(-2), parseInt(dates[1]) - 1, dates[0], 3, 0, 0));
+}
 
-// console.log(converteDate("15/03/22"))
+console.log(converteDate("15/03/22"))
 
 
 //03/03/2031
@@ -29,12 +29,15 @@ let data = object.split('/');
 let dataValidacaoDoRegistro = new Date(data[2], data[0] - 1, data[1]);
 
 //let dataValidacaoDoRegistro = new Date(20 + data[2].substr(-2), data[0] - 1, data[1]);
- //let dataValidacaoDoRegistro = new Date(Date.UTC(data[2], data[1], data[0], 3, 0, 0));
+//let dataValidacaoDoRegistro = new Date(Date.UTC(data[2], data[1], data[0], 3, 0, 0));
 console.log(dataValidacaoDoRegistro)
- 
+
 //  let dataValidErr = new Date(Date.UTC(dataErr[2],  dataErr[0], dataErr[1]));
 
 //  let dataValid = new Date(Date.UTC(dataErr[2],  dataErr[1], dataErr[0]));
 //  console.log(dataValidErr)
 
 //  console.log(dataValid)
+
+
+
