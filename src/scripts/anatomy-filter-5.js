@@ -20,19 +20,18 @@ let itens = obras.filter((el) => {
 
 console.log(itens)
 
-// let listClt = obras.filter((el) => {
-//     return el.employee === 'CLT'
-// }).length;
+let listClt = obras.filter((el) => {
+    return el.employee === 'CLT'
+}).length;
 
-// console.log(listClt)
+console.log(listClt)
 
 let list = obras.filter((este, i) => obras.filter(a => a !== null).map(a => a._id).indexOf(este._id) === i)
 
 console.log(list)
-/*
+
 var campoSelecaoAsps = asp.filter((este, i) => asp.indexOf(este) === i).filter(function isNaN(item) {
     return item._id
 });
-*/
 
-//console.log(listPj)
+console.log(listPj)
