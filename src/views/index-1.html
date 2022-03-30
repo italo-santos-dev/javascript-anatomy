@@ -3,77 +3,52 @@
 <script>
 
   function parseExcelFile1(inputElement) {
-    var files = inputElement.files || [];
+    let files = inputElement.files || [];
     if (!files.length) return;
-    var file = files[0];
+    let file = files[0];
 
     console.time();
 
-    var reader = new FileReader();
-    reader.onloadend = function (event) {
-      var arrayBuffer = reader.result;
-      // debugger      
+    let reader = new FileReader();
 
-      // var options = { type: 'array' };
+    reader.onloadend = function (event) {
+
+      let arrayBuffer = reader.result;
+
       var options = { type: "base64", cellText: false, cellDates: true }
       var workbook = XLSX.read(arrayBuffer, options);
 
-      console.timeEnd();
-
-      var sheetName = workbook.SheetNames[0]
+      var sheetName = workbook.SheetNames
       var sheet = workbook.Sheets[sheetName]
+
+      console.log(sheet);
+
+      var range = XLSX.utils.decode_range(sheet['!ref']);
+      var ncols = range.e.c - range.s.c + 1, nrows = range.e.r - range.s.r + 1;
+
+      console.log(nrows);
 
       let rows = XLSX.utils.sheet_to_json(sheet)
 
-      
+      console.log(rows)
+
       if (!rows.length) {
         throw 'Não foi possível ler os dados do arquivo.';
       }
 
-      
-
-      console.log(rows)
+      console.timeEnd();
 
       let itens = rows.filter(a => a !== null).filter((este, i) => rows.filter(a => a !== null).map(a => a._id).indexOf(este._id) === i);
-
-      // let dados = itens.filter((el) => {
-      //   return el. === "E2E"
-      // });
 
       console.log(itens)
 
     };
 
-    reader.readAsArrayBuffer(file);
+    //reader.readAsArrayBuffer(file);
+    reader.readAsText(file);
+
   }
 
-
-let vivo = "../testee2evivo.json"
-
-CSVtoArray(vivo)
-
-console.log(CSVtoArray)
-
-//Devolver matriz de valores de sequência ou NULL se a sequência CSV não estiver bem formada.‎
-function CSVtoArray(text) {
-    var re_valid = /^\s*(?:'[^'\\]*(?:\\[\S\s][^'\\]*)*'|"[^"\\]*(?:\\[\S\s][^"\\]*)*"|[^,'"\s\\]*(?:\s+[^,'"\s\\]+)*)\s*(?:,\s*(?:'[^'\\]*(?:\\[\S\s][^'\\]*)*'|"[^"\\]*(?:\\[\S\s][^"\\]*)*"|[^,'"\s\\]*(?:\s+[^,'"\s\\]+)*)\s*)*$/;
-    var re_value = /(?!\s*$)\s*(?:'([^'\\]*(?:\\[\S\s][^'\\]*)*)'|"([^"\\]*(?:\\[\S\s][^"\\]*)*)"|([^,'"\s\\]*(?:\s+[^,'"\s\\]+)*))\s*(?:,|$)/g;
-    // Return NULL if input string is not well formed CSV string.
-    if (!re_valid.test(text)) return null;
-    var a = [];                     // Initialize array to receive values.
-    text.replace(re_value, // "Walk" the string using replace with callback.
-        function(m0, m1, m2, m3) {
-            // Remove backslash from \' in single quoted values.
-            if      (m1 !== undefined) a.push(m1.replace(/\\'/g, "'"));
-            // Remove backslash from \" in double quoted values.
-            else if (m2 !== undefined) a.push(m2.replace(/\\"/g, '"'));
-            else if (m3 !== undefined) a.push(m3);
-            return ''; // Return empty string.
-        });
-    // Handle special case of empty last value.
-    if (/,\s*$/.test(text)) a.push('');
-    return a;
-};
 </script>
 
 <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
