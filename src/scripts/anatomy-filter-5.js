@@ -33,5 +33,3 @@ console.log(list)
 var campoSelecaoAsps = asp.filter((este, i) => asp.indexOf(este) === i).filter(function isNaN(item) {
     return item._id
 });
-
-console.log(listPj)
