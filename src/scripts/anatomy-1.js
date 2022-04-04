@@ -24,3 +24,8 @@ function returnHiTo(name) {
 }
 
 console.log(returnHiTo('Andrew'))
+
+const decoder = new TextDecoder("utf-8");
+const str = decoder.decode(Buffer.from([0xAA, 0xAA]));
+
+console.log(str)
