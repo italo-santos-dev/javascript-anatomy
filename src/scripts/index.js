@@ -2,7 +2,7 @@ const fs = require("fs");
 const fastCsv = require("fast-csv");
 
 
-fs.createReadStream("assets/DRT.csv", { encoding: "utf-8" })
+fs.createReadStream("../../assets/DRTxit.csv", { encoding: "utf-8" })
   .on("data", (st) => {
     console.log(st);
   })
