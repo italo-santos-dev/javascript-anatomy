@@ -9,43 +9,46 @@
 
     console.time();
 
-    let reader = new FileReader();
+    let reader = new FileReader()
 
     reader.onloadend = function (event) {
-
       let arrayBuffer = reader.result;
 
-      var options = { type: "base64", cellText: false, cellDates: true }
-      var workbook = XLSX.read(arrayBuffer, options);
+      var workbook = XLSX.read(arrayBuffer, {
+            type: 'string',
+            cellText: false,
+            cellDates: true,
+            WTF: true
+        });
 
       var sheetName = workbook.SheetNames
-      var sheet = workbook.Sheets[sheetName]
-
-      console.log(sheet);
+      var sheet = workbook.Sheets[sheetName[0]]
 
       var range = XLSX.utils.decode_range(sheet['!ref']);
       var ncols = range.e.c - range.s.c + 1, nrows = range.e.r - range.s.r + 1;
 
       console.log(nrows);
 
-      let rows = XLSX.utils.sheet_to_json(sheet)
-
-      console.log(rows)
+      let rows = XLSX.utils.sheet_to_json(sheet, {
+            blankrows: false,
+            raw: false,
+            dateNF: 'dd"/"mm"/"yyyy'
+        })
 
       if (!rows.length) {
         throw 'Não foi possível ler os dados do arquivo.';
       }
 
+      console.log(rows)
+
       console.timeEnd();
-
-      let itens = rows.filter(a => a !== null).filter((este, i) => rows.filter(a => a !== null).map(a => a._id).indexOf(este._id) === i);
-
-      console.log(itens)
-
+    
     };
 
-    //reader.readAsArrayBuffer(file);
-    reader.readAsText(file);
+    // reader = file.readerBase64(); 
+
+    reader.readAsArrayBuffer(file);
+    // reader.readAsText(file);   // esse buga o arquivo .xlsx 
 
   }
 
