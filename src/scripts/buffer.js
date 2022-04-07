@@ -5,7 +5,6 @@ const filepath = '../../assets/DRTxit.csv'
 
 const readable = fs.createReadStream(filepath, {
     highWaterMark: 10 * 1024 * 1024,
-    encoding: 'utf-8'
 });
 
 process_RS(readable);
