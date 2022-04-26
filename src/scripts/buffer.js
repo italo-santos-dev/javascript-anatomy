@@ -4,7 +4,7 @@ var XLSX = require('xlsx');
 const filepath = '../../assets/DRTxit.csv'
 
 const readable = fs.createReadStream(filepath, {
-    highWaterMark: 10 * 1024 * 1024,
+    highWaterMark: 20 * 1024 * 1024,
 });
 
 process_RS(readable);
