@@ -10,26 +10,26 @@ fs.createReadStream("../../assets/DRTxit.csv", { encoding: "utf-8" })
     console.log(err);
   });
 
-// const options = {
-//   objectMode: true,
-//   delimiter: ";",
-//   quote: null,
-//   headers: true,
-//   discardUnmappedColumns: true,
-//   renameHeaders: false,
-// };
+const options = {
+  objectMode: true,
+  delimiter: ";",
+  quote: null,
+  headers: true,
+  discardUnmappedColumns: true,
+  renameHeaders: false,
+};
 
-// const data = [];
+const data = [];
 
-// fs.createReadStream("assets/DRT.csv")
-//   .pipe(fastCsv.parse(options))
-//   .on("error", (error) => {
-//     console.log(error);
-//   })
-//   .on("data", (row) => {
-//     data.push(row);
-//   })
-//   .on("end", (rowCount) => {
-//     console.log(rowCount);
-//     console.log(data);
-//   });
+fs.createReadStream("assets/DRT.csv")
+  .pipe(fastCsv.parse(options))
+  .on("error", (error) => {
+    console.log(error);
+  })
+  .on("data", (row) => {
+    data.push(row);
+  })
+  .on("end", (rowCount) => {
+    console.log(rowCount);
+    console.log(data);
+  });
