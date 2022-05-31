@@ -6,12 +6,10 @@ const lets = [b, c, a];
 
 [a, b, c] = lets;
 
-
-
 const nums = [1000, 2000, 3000, 4000, 5000];
-const [num1, num2, ...rest] = nums;
+const [num1, num2, , num4, ...rest] = nums;
 
-console.log(num1, num2);
+console.log(num1, num2, num4);
 console.log(rest);     
 
 
