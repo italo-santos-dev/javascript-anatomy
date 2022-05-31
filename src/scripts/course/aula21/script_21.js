@@ -2,12 +2,10 @@ let a = 'A'; // b
 let b = 'B'; // c
 let c = 'C'; // a
 
-let bat = a;
+const lets = [b, c, a];
 
-a = b;
-b = c;
-c = bat;
+[a, b, c] = lets;
 
-console.log(a, b, c);
+console.log(a, b, c);       
 
 
