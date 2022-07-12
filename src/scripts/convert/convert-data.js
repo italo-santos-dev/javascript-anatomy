@@ -50,3 +50,20 @@ function setTimeTo6(updateDate) {
 
     return date;
 }
+
+
+function datas(date) {
+    let str_data;
+    let data = new Date(date);
+    let dia = data.getDate();
+    let mes = data.getMonth();
+    let anoFour = data.getFullYear();
+    
+    str_data = (dia <= 9 ? '0' + dia : dia) + '/' + ((mes + 1) <= 9 ? '0' + (mes + 1) : (mes + 1)) + '/' + anoFour;
+  
+    return str_data;
+  }
+
+  console.log(datas("Thu Jun 23 2022 16:32:45 GMT-0300 (BRT)"))
+
+  console.log("Test test")
