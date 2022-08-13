@@ -65,5 +65,3 @@ function datas(date) {
   }
 
   console.log(datas("Thu Jun 23 2022 16:32:45 GMT-0300 (BRT)"))
-
-  console.log("Test test")
