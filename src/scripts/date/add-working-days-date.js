@@ -1,6 +1,7 @@
-let date = new Date();
+let date = new Date("2022-07-24T21:39:01.004Z");
 date.setDate(date.getDate() + 3);
-
+console.log(date)
+console.log(new Date(new Date().setDate(new Date().getDate() + 1)))
 
 console.log(date)
 const dayOfWeek = date.getDay();
@@ -39,5 +40,4 @@ let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
 if (diffDays < 15) {
     console.log("Test Gg")
-    //_utils.addWarningMessage("Para que a obra seja apta para Pré MOS, a data de hoje deve ter 15 dias de antecedencia em relação a data de inicio previsto para a obra")
 }
