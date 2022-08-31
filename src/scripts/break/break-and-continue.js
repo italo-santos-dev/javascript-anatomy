@@ -9,4 +9,9 @@ for (let i = 0; i < numeros.length; i++) {
     }
 
     console.log(numero);
+
+    if (numero === 7) {
+        console.log("Test Break");
+        break;
+    }
 } 
