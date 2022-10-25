@@ -41,3 +41,7 @@ let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 if (diffDays < 15) {
     console.log("Test Gg")
 }
+
+var agora = new Date("2022-10-24T14:55:21.473Z");
+agora.toLocaleString("pt-br");
+console.log(agora);
