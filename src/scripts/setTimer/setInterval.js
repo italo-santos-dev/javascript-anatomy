@@ -1,13 +1,11 @@
 function showTime() {
     let date = new Date();
 
-    return  date.toLocaleDateString('pt-br', {
+    return date.toLocaleDateString('pt-br', {
         hour12: false
     });
 }
 
-function intervalTime() {
+setInterval(function () {
     console.log(showTime());
-}
-
-setInterval(intervalTime, 1000);
+}, 1000);
