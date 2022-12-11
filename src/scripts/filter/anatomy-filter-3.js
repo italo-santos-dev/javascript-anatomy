@@ -2,6 +2,7 @@ const asp = [
   { id: 'eyJhbGciOiJIUzI1NiJ9' },
   { _id: NaN },
   { _id: 'eyJhbGciOiJIUzI1NiJ8' },
+  { _id: 'eyJhbGciOiJIUzI1NiJ8' },
   { _id: null },
   { _id: 'eyJhbGciOiJIUzI1NiJ7' },
   { _id: 'undefined' },
@@ -21,19 +22,19 @@ for (let i = 0; i < asp.length; i++) {
   }
 }
 
-console.log(campoAsp)
+// console.log(campoAsp)
 
 const aspCampoNumero = asp.filter(function (asP) {
   return typeof (asP._id) === 'number'
 })
 
-console.log(aspCampoNumero)
+// console.log(aspCampoNumero)
 
 const aspNoDuplice = asp.filter(function (asP, i) {
   return asp.indexOf(asP) === i
 })
 
-console.log(aspNoDuplice)
+// console.log(aspNoDuplice)
 
 const aspCampoNoDuplice = asp.filter((este, i) => asp.indexOf(este) === i)
 
@@ -43,4 +44,4 @@ const aspCampoNuNull = asp.filter(function isNaN (asP) {
   return asP._id
 })
 
-console.log(aspCampoNuNull)
+// console.log(aspCampoNuNull)
