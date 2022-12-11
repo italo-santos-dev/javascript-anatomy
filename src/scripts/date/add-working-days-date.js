@@ -30,13 +30,15 @@ function data(date) {
 let datas = new Date();
 let dataFinal = new Date(datas.getFullYear(), datas.getMonth(), datas.getDate(), 23, 59, 59);
 
-// console.log(dataFinal)
+console.log(dataFinal);
 
 
-let date1 = new Date();
-let date2 = new Date();
+let date1 = new Date("2022-10-13T14:55:21.473Z");
+let date2 = new Date("2022-10-20T14:55:21.473Z");
 let diffTime = Math.abs(date2 - date1);
 let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+console.log(diffDays);
 
 if (diffDays < 15) {
     // console.log("Test Gg")
