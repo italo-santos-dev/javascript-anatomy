@@ -7,6 +7,7 @@ const produtos = [
   { id: NaN },
   { id: 'undefined' },
   { id: 4, descricao: 'Liquidificador', categoria: 'Eletrodoméstico' },
+  { id: 5, descricao: 'Fogão', categoria: 'Eletrodoméstico' },
   { id: 5, descricao: 'Fogão', categoria: 'Eletrodoméstico' }
 ]
 
