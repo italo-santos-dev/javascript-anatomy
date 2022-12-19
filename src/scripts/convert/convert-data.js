@@ -63,5 +63,5 @@ function datas(date) {
   
     return str_data;
   }
-
-  console.log(datas("Thu Jun 23 2022 16:32:45 GMT-0300 (BRT)"))
+//   "Thu Jun 23 2022 16:32:45 GMT-0300 (BRT)"
+  console.log(datas(new Date()))
