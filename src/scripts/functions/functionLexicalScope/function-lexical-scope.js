@@ -4,4 +4,8 @@ function metas() {
     console.log(name);
 }
 
-metas();
+function metasTwo() {
+    metas();
+}
+
+metasTwo();
