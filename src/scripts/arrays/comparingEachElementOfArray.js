@@ -7,7 +7,7 @@ let _oldObject =  [
        "length": 1426,
        "_id": "6390c937829a706fd2e53b30",
        "contentType": "image/png",
-       "hash": "304918526ae81259a11031b0f8c761a0"
+       "hash": "1"
     },
     {
         "pendingContentExtraction": false,
@@ -16,7 +16,7 @@ let _oldObject =  [
         "length": 1426,
         "_id": "6390c937829a706fd2e53b30",
         "contentType": "image/png",
-        "hash": "304918526ae81259a11031b0f8c761a0"
+        "hash": "1"
      },
      {
       "pendingContentExtraction": false,
@@ -27,7 +27,7 @@ let _oldObject =  [
       "storage": "S3_AMAZON",
       "collection": "uploadedFiles",
       "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-      "hash": "bc5276e013c082b7af547225f78101f6"
+      "hash": "1"
    }
  ]
  
@@ -41,7 +41,7 @@ let _oldObject =  [
        "storage": "S3_AMAZON",
        "collection": "uploadedFiles",
        "contentType": "image/png",
-       "hash": "304918526ae81259a11031b0f8c761a0"
+       "hash": "1"
     },
     {
        "pendingContentExtraction": false,
@@ -52,20 +52,20 @@ let _oldObject =  [
        "storage": "S3_AMAZON",
        "collection": "uploadedFiles",
        "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-       "hash": "bc5276e013c082b7af547225f78101f6"
+       "hash": "1"
     }
  ]
 
 const categoriasFiltradas = _object.filter(object => _oldObject.filter(oldObject => oldObject.hash === object.hash).length);
 console.log(categoriasFiltradas)
-//console.log(categoriasFiltradas.length > 1)
-//console.log(JSON.stringify(categoriasFiltradas));
+console.log(categoriasFiltradas.length > 1)
+console.log(JSON.stringify(categoriasFiltradas));
 
-//   for(var i=0;i<a.length;i++) {
-//     if(a[i]!=b[i]) {
-//         console.log(false);
-//     } else {
-//         console.log(true);
-//     }
-//   }
+  for(var i=0;i<a.length;i++) {
+    if(a[i]!=b[i]) {
+        console.log(false);
+    } else {
+        console.log(true);
+    }
+  }
 
