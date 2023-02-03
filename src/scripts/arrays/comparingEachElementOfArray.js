@@ -61,11 +61,11 @@ console.log(categoriasFiltradas)
 console.log(categoriasFiltradas.length > 1)
 console.log(JSON.stringify(categoriasFiltradas));
 
-  for(var i=0;i<a.length;i++) {
-    if(a[i]!=b[i]) {
-        console.log(false);
-    } else {
-        console.log(true);
-    }
-  }
+//   for(var i=0;i<a.length;i++) {
+//     if(a[i]!=b[i]) {
+//         console.log(false);
+//     } else {
+//         console.log(true);
+//     }
+//   }
 
