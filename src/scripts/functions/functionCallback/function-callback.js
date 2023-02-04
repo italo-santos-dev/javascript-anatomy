@@ -26,10 +26,12 @@ function f3(callback) {
     }, rand());
 }
 
-f1(function() {
-    f2(function() {
-        f3(function() {
-            console.log("Ok, man");
-        });
-    })
-});
+f1(f1Callback);
+
+function f1Callback() {
+    f2(f3Callback);
+}
+
+function f3Callback() {
+    console.log("Nice, man");
+}
