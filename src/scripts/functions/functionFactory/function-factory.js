@@ -2,11 +2,11 @@
     return {
         name,
         lastname,
-        fala: function(subjectmatter) {
-            return `${name} está ${subjectmatter}.`;
+        speaks(subjectmatter) {
+            return `${this.name} está ${subjectmatter}.`;
         }
     }
  }
 
  const userID1 = createUser('Bianca',  'Cavalcante ');
- console.log(userID1.fala('loves to read books'));
+ console.log(userID1.speaks('loves to read books'));
