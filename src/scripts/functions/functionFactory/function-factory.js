@@ -2,11 +2,14 @@
     return {
         name,
         lastname,
+        
         speaks(subjectmatter) {
             return `${this.name} está ${subjectmatter}.`;
         },
+
         altura: a,
         peso: p,
+        
         imc() {
             const indice = this.peso / (this.altura ** 2);
             return indice.toFixed(2);
