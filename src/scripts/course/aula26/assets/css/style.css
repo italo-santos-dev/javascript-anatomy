@@ -65,3 +65,7 @@ form button:hover {
 .bad {
   background: rgb(255, 150, 150);
 }
+.paragrafo-resultado {
+  background: rgb(109, 255, 182);
+  padding: 10px 20px;
+}
