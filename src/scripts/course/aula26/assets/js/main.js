@@ -9,7 +9,12 @@ form.addEventListener('submit', function (event) {
     const height = Number(inputHeight.value);
 
     if (!weight) {
-        setResult( 'Peso inválido');
+        setResult( 'Weight invalid', false);
+        return;
+    };
+
+    if (!height) {
+        setResult( 'Height invalid', false);
         return;
     }; 
 
@@ -20,7 +25,7 @@ function createParagraph (className) {
     return paragraph;
 }
 
-function setResult(msg) {
+function setResult(msg, isValid) {
     const result = document.querySelector('#resultado');
     result.innerHTML = '';
     const paragraph = createParagraph();
