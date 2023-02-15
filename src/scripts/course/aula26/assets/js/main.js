@@ -29,4 +29,6 @@ function setResult(msg, isValid) {
     const result = document.querySelector('#resultado');
     result.innerHTML = '';
     const paragraph = createParagraph();
+    paragraph.innerHTML = msg;
+    result.appendChild(paragraph);
 }
