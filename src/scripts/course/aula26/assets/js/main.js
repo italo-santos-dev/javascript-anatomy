@@ -9,16 +9,22 @@ form.addEventListener('submit', function (event) {
     const height = Number(inputHeight.value);
 
     if (!weight) {
-        setResult( 'Weight invalid', false);
+        setResult('Weight invalid', false);
         return;
     };
 
     if (!height) {
-        setResult( 'Height invalid', false);
+        setResult('Height invalid', false);
         return;
     }; 
 
+    const imc = getImc(weight,  height);
 });
+
+function getLevelImc(imc) {
+    const level = ['Abaixo do peso', 'Peso normal', 'Sobrepeso',
+     'Obesidade grau 1', 'Obesidade grau 2', 'Obesidade grau 3'];
+}
 
 function getImc(weight, height) {
     const imc = weight / height ** 2;
