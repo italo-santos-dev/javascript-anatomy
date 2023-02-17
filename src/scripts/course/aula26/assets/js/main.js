@@ -20,6 +20,11 @@ form.addEventListener('submit', function (event) {
 
 });
 
+function getImc(weight, height) {
+    const imc = weight / height ** 2;
+    return imc.toFixed(2);
+}
+
 function createParagraph (className) {
     const paragraph = document.createElement('p');
     return paragraph;
