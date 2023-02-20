@@ -19,6 +19,11 @@ form.addEventListener('submit', function (event) {
     }; 
 
     const imc = getImc(weight,  height);
+    const levelImc = getLevelImc(imc);
+
+    const msg = `Seu imc é ${imc} (${levelImc})`;
+
+    setResult(msg, true);
 });
 
 function getLevelImc(imc) {
