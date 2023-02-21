@@ -5,7 +5,7 @@ form.addEventListener('submit', function (event) {
     const inputWeight = event.target.querySelector('#peso');
     const inputHeight = event.target.querySelector('#altura');
     
-    const weight = Number(inputHeight.value);
+    const weight = Number(inputWeight.value);
     const height = Number(inputHeight.value);
 
     if (!weight) {
