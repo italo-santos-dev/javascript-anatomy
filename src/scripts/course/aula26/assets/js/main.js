@@ -51,7 +51,15 @@ function createParagraph (className) {
 function setResult(msg, isValid) {
     const result = document.querySelector('#resultado');
     result.innerHTML = '';
+    
     const paragraph = createParagraph();
+
+    if (isValid) {
+        paragraph.classList.add('paragrafo-resultado');
+    } else {
+        paragraph.classList.add('bad');
+    }
+
     paragraph.innerHTML = msg;
     result.appendChild(paragraph);
 }
