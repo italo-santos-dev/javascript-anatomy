@@ -5,10 +5,13 @@ const produtos = [
   { _id: 4, descricao: 'Liquidificador', categoria: 'Eletrodoméstico' },
   { _id: 5, descricao: 'Fogão', categoria: 'Eletrodoméstico' }
 ]
+
 function retornaEletronico (value) {
   if (value._id !== null) { return value }
 }
+
 const produtosEletronico = produtos.filter(retornaEletronico)
+
 produtosEletronico.forEach(produtoEletro => {
   console.log(produtoEletro)
 })
