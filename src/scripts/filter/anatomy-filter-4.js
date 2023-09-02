@@ -35,3 +35,13 @@ let itens = asp.filter(a => a !== null).filter((este, i) => asp.filter(a => a !=
 // itens.forEach(item => item);
 
 console.log(itens)
+
+
+const arr1 = [1, 2, 3];
+const arr2 = [1, 3, 3];
+
+const equal = arr1.length === arr2.length && arr1.every((value, index) => value === arr2[index]);
+
+if (equal) {
+  console.log("Os arrays são iguais");
+} else { }
