@@ -22,8 +22,19 @@ class DispositoEletronico {
     }
 }
 
-const d1 = new DispositoEletronico('Smartphone')
-d1.ligar();
-d1.desligar()
-d1.desligar()
-console.log(d1)
+// const d1 = new DispositoEletronico('Smartphone')
+// d1.ligar();
+// d1.desligar()
+// d1.desligar()
+// console.log(d1)
+
+class Smartphone extends DispositoEletronico {
+    constructor(nome, cor, modelo) {
+        super(nome);
+        this.cor = cor;
+        this.modelo = modelo;
+    }
+}
+
+const s1 = new Smartphone('Samsung', 'Black', 'Galaxy S10');
+console.log(s1)
