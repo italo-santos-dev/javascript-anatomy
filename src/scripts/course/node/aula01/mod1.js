@@ -1,5 +1,5 @@
 const name = 'Kif';
-const lastname = 'Miranda';
+const lastname = '';
 
 const speakName = () => {
     console.log(name, lastname);
